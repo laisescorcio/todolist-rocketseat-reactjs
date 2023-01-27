@@ -1,38 +1,77 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import toDoListLogo from './assets/toDoListLogo.svg'
-import './App.css'
+import clipboard from './assets/clipboard.svg'
+import insertIcon from './assets/insertIcon.svg'
+import checkedBox from './assets/checkedBox.svg'
+import { Trash } from 'phosphor-react'
 
-import styles from './App.css'
+import styles from './App.module.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isEmpty, setIsEmpty] = useState(true)
 
   return (
     <div className="App">
       <header className={styles.header}>
         <img src={toDoListLogo} alt="To Do List Logo"/>
       </header>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <main className={styles.main}>
+        <div className={styles.wrapperMain}>
+        <div className={styles.taskInputBox}>
+          <input className={styles.taskInput}/>
+          <button className={styles.taskButton}>
+            Criar
+            <img src={insertIcon} />
+          </button>
+        </div>
+        <div>
+          <div className={styles.wraperTaskInput}>
+            <span className={styles.taskInputCreated}>Tarefas criadas</span>
+            <span className={styles.taskInputDone}>Concluídas</span>
+          </div>
+          { isEmpty ? (
+            <div className={styles.wraperTaskBoard}>
+              <img src={clipboard}/>
+              <div className={styles.taskBoard}>
+                <span className={styles.taskBoardEmpty}>Voce ainda não tem tarefas cadastradas</span>
+                <span className={styles.taskBoardDoIt}>Crie tarefas e organize seus itens a fazer</span>
+              </div>
+            </div>
+          ) : (
+            <div className={styles.wraperTaskBoard}>
+              <div className={styles.wraperCard}>
+                <checkbox className={styles.checkbox}></checkbox>
+                <span className={styles.content}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
+                <Trash size={20}/>
+              </div>
+              <div className={styles.wraperCard}>
+                <checkbox className={styles.checkbox}></checkbox>
+                <span className={styles.content}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
+                <Trash size={20}/>
+              </div>
+              <div className={styles.wraperCard}>
+                <checkbox className={styles.checkbox}></checkbox>
+                <span className={styles.content}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
+                <Trash size={20}/>
+              </div>
+              <div className={styles.wraperCard}>
+                <checkbox className={styles.checkbox}></checkbox>
+                <span className={styles.content}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
+                <Trash size={20}/>
+              </div>
+              <div className={styles.wraperCard} disabled>
+                <checkbox className={styles.checkbox}>
+                  {/* { disabled && <img src={checkedBox}/> } */}
+                </checkbox>
+                <span className={styles.content}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
+                <Trash size={20}/>
+              </div>
+            </div>
+          )
+          }
+        </div>
+        </div>
+      </main>
     </div>
   )
 }
