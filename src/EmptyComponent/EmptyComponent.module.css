@@ -1,0 +1,33 @@
+.wraperTaskBoard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #262626;
+    min-width: 44rem;
+    padding-top: 14rem;
+    height: 15.25rem;
+}
+
+.taskBoardEmpty {
+    line-height: 22px;
+    font-size: var(--font-size-200);
+    text-align: center;
+    font-weight: 700;
+}
+
+.taskBoard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    line-height: 24px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .wraperTaskBoard {
+        width: 100%;
+        min-width: auto;
+    }
+}

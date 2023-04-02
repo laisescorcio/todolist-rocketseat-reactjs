@@ -38,9 +38,12 @@
     background-color: var(--gray-500);
     margin-right: .5rem;
     font-size: var(--font-size-200);
+    color: var(--white);
+    padding: 0 16px;
 }
 
 .taskButton {
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -78,32 +81,10 @@
     color: var(--purple-300);
 }
 
-.wraperTaskBoard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-top: 1px solid #262626;
-    min-width: 44rem;
-    padding-top: 14rem;
-    height: 15.25rem;
-}
-
-.taskBoard {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 1rem;
-}
-
-.taskBoardEmpty,
 .taskBoardDoIt {
     line-height: 22px;
     font-size: var(--font-size-200);
     text-align: center;
-}
-
-.taskBoardEmpty {
-    font-weight: 700;
 }
 
 /* CARDS */
@@ -126,6 +107,7 @@
 }
 
 .checkbox {
+    cursor: pointer;
     width: 1.091rem;
     height: 1.091rem;
     margin-right: 0.75rem;
@@ -150,10 +132,5 @@
         width: 100%;
         padding: 12px;
         max-width: 44rem;
-    }
-
-    .wraperTaskBoard {
-        width: 100%;
-        min-width: auto;
     }
 }

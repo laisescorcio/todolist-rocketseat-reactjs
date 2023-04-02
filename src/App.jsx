@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import EmptyComponent from './EmptyComponent'
 import toDoListLogo from './assets/toDoListLogo.svg'
 import clipboard from './assets/clipboard.svg'
 import insertIcon from './assets/insertIcon.svg'
@@ -8,7 +9,7 @@ import { Trash } from 'phosphor-react'
 import styles from './App.module.css'
 
 function App() {
-  const [isEmpty, setIsEmpty] = useState(false)
+  const [isEmpty, setIsEmpty] = useState(true)
 
   return (
     <div className="App">
@@ -30,13 +31,7 @@ function App() {
             <span className={styles.taskInputDone}>Concluídas</span>
           </div>
           { isEmpty ? (
-            <div className={styles.wraperTaskBoard}>
-              <img src={clipboard}/>
-              <div className={styles.taskBoard}>
-                <span className={styles.taskBoardEmpty}>Voce ainda não tem tarefas cadastradas</span>
-                <span className={styles.taskBoardDoIt}>Crie tarefas e organize seus itens a fazer</span>
-              </div>
-            </div>
+            <EmptyComponent />
           ) : (
             <div className={styles.wraperTaskBoard}>
               <div className={styles.wraperCard}>
