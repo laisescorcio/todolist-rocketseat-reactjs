@@ -1,0 +1,53 @@
+.wraperTaskBoard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #262626;
+    min-width: 44rem;
+    padding-top: 14rem;
+    height: 15.25rem;
+}
+
+.wraperCard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--gray-400);
+    border-radius: 8px;
+    font-size: var(--font-size-100);
+    margin: 0.75rem 0;
+    color: var(--white);
+}
+
+.wraperCard[disabled] {
+    color: var(--gray-300);
+    text-decoration: line-through;
+}
+
+.checkbox {
+    cursor: pointer;
+    width: 1.091rem;
+    height: 1.091rem;
+    margin-right: 0.75rem;
+    border: 2px solid var(--blue-300);
+    border-radius: 100px;
+}
+
+.wraperCard[disabled] .checkbox {
+    border: 2px solid var(--purple-300);
+    background-color: var(--purple-300);
+}
+
+.content {
+    max-width: 37.5rem;
+}
+
+@media (max-width: 768px) {
+    .wraperTaskBoard {
+        width: 100%;
+        min-width: auto;
+    }
+}

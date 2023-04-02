@@ -1,15 +1,13 @@
 import { useState } from 'react'
-import EmptyComponent from './EmptyComponent'
+import EmptyComponent from './components/EmptyComponent'
+import CardComponent from './components/CardComponent'
+import AddNewCardComponent from './components/AddNewCardComponent'
 import toDoListLogo from './assets/toDoListLogo.svg'
-import clipboard from './assets/clipboard.svg'
-import insertIcon from './assets/insertIcon.svg'
-import checkedBox from './assets/checkedBox.svg'
-import { Trash } from 'phosphor-react'
 
 import styles from './App.module.css'
 
 function App() {
-  const [isEmpty, setIsEmpty] = useState(true)
+  const [isEmpty, setIsEmpty] = useState(false)
 
   return (
     <div className="App">
@@ -18,53 +16,19 @@ function App() {
       </header>
       <main className={styles.main}>
         <div className={styles.wrapperMain}>
-        <div className={styles.taskInputBox}>
-          <input className={styles.taskInput}/>
-          <button className={styles.taskButton}>
-            Criar
-            <img src={insertIcon} />
-          </button>
-        </div>
-        <div>
-          <div className={styles.wraperTaskInput}>
-            <span className={styles.taskInputCreated}>Tarefas criadas</span>
-            <span className={styles.taskInputDone}>Concluídas</span>
-          </div>
-          { isEmpty ? (
-            <EmptyComponent />
-          ) : (
-            <div className={styles.wraperTaskBoard}>
-              <div className={styles.wraperCard}>
-                <checkbox className={styles.checkbox}></checkbox>
-                <span className={styles.content}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
-                <Trash size={20}/>
-              </div>
-              <div className={styles.wraperCard}>
-                <checkbox className={styles.checkbox}></checkbox>
-                <span className={styles.content}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
-                <Trash size={20}/>
-              </div>
-              <div className={styles.wraperCard}>
-                <checkbox className={styles.checkbox}></checkbox>
-                <span className={styles.content}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
-                <Trash size={20}/>
-              </div>
-              <div className={styles.wraperCard}>
-                <checkbox className={styles.checkbox}></checkbox>
-                <span className={styles.content}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
-                <Trash size={20}/>
-              </div>
-              <div className={styles.wraperCard} disabled>
-                <checkbox className={styles.checkbox}>
-                  {/* { disabled && <img src={checkedBox}/> } */}
-                </checkbox>
-                <span className={styles.content}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
-                <Trash size={20}/>
-              </div>
+          <AddNewCardComponent/>
+          <div>
+            <div className={styles.wraperTaskInput}>
+              <span className={styles.taskInputCreated}>Tarefas criadas</span>
+              <span className={styles.taskInputDone}>Tarefas concluídas</span>
             </div>
-          )
-          }
-        </div>
+            { isEmpty ? (
+              <EmptyComponent />
+            ) : (
+              <CardComponent/>
+            )
+            }
+          </div>
         </div>
       </main>
     </div>

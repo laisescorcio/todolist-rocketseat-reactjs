@@ -1,10 +1,10 @@
 import React from 'react'
-import clipboard from '../assets/clipboard.svg'
+import clipboard from '../../assets/clipboard.svg'
 
 import styles from './EmptyComponent.module.css'
 
 
-function EmptyComponent() {
+export default function EmptyComponent() {
     return (
         <div className={styles.wraperTaskBoard}>
             <img src={clipboard} />
@@ -15,5 +15,3 @@ function EmptyComponent() {
         </div>
     )
 }
-
-export default EmptyComponent
