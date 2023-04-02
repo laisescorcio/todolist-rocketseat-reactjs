@@ -8,7 +8,7 @@ import { Trash } from 'phosphor-react'
 import styles from './App.module.css'
 
 function App() {
-  const [isEmpty, setIsEmpty] = useState(true)
+  const [isEmpty, setIsEmpty] = useState(false)
 
   return (
     <div className="App">
