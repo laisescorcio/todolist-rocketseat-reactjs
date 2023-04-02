@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import EmptyComponent from './components/EmptyComponent'
-import CardComponent from './components/CardComponent'
-import AddNewCardComponent from './components/AddNewCardComponent'
+import Empty from './components/Empty'
+import Card from './components/Card'
+import AddNewCard from './components/AddNewCard'
 import toDoListLogo from './assets/toDoListLogo.svg'
 
 import styles from './App.module.css'
@@ -16,16 +16,16 @@ function App() {
       </header>
       <main className={styles.main}>
         <div className={styles.wrapperMain}>
-          <AddNewCardComponent/>
+          <AddNewCard/>
           <div>
             <div className={styles.wraperTaskInput}>
               <span className={styles.taskInputCreated}>Tarefas criadas</span>
               <span className={styles.taskInputDone}>Tarefas concluídas</span>
             </div>
             { isEmpty ? (
-              <EmptyComponent />
+              <Empty />
             ) : (
-              <CardComponent/>
+              <Card/>
             )
             }
           </div>

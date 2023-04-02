@@ -1,10 +1,10 @@
 import React from 'react'
 import { Trash } from 'phosphor-react'
 
-import styles from './CardComponent.module.css'
+import styles from './Card.module.css'
 
 
-export default function CardComponent() {
+export default function Card() {
     return (
         <div className={styles.wraperTaskBoard}>
             <div className={styles.wraperCard}>
