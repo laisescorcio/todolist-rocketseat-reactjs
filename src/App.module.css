@@ -54,6 +54,10 @@
     padding: 1rem;
 }
 
+.taskButton img {
+    padding-left: 4px;
+}
+
 .wraperTaskInput {
     display: flex;
     align-items: center;
@@ -95,6 +99,7 @@
 .taskBoardDoIt {
     line-height: 22px;
     font-size: var(--font-size-200);
+    text-align: center;
 }
 
 .taskBoardEmpty {
@@ -138,3 +143,17 @@
 }
 
 /* CARDS */
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .wrapperMain {
+        width: 100%;
+        padding: 12px;
+        max-width: 44rem;
+    }
+
+    .wraperTaskBoard {
+        width: 100%;
+        min-width: auto;
+    }
+}
