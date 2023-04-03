@@ -1,15 +1,16 @@
 .wraperTaskBoard {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     border-top: 1px solid #262626;
     min-width: 44rem;
-    padding-top: 14rem;
+    padding-top: 0;
     height: 15.25rem;
 }
 
-.wraperCard {
+.wraperCard,
+.wraperCardIsDone {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -20,9 +21,10 @@
     font-size: var(--font-size-100);
     margin: 0.75rem 0;
     color: var(--white);
+    border: none;
 }
 
-.wraperCard[disabled] {
+.wraperCardIsDone {
     color: var(--gray-300);
     text-decoration: line-through;
 }
@@ -36,7 +38,7 @@
     border-radius: 100px;
 }
 
-.wraperCard[disabled] .checkbox {
+.wraperCardIsDone .checkbox {
     border: 2px solid var(--purple-300);
     background-color: var(--purple-300);
 }

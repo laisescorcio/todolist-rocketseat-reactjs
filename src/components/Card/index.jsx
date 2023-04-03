@@ -1,39 +1,30 @@
 import React from 'react'
+import { useState } from 'react'
+
 import { Trash } from 'phosphor-react'
 
 import styles from './Card.module.css'
 
 
 export default function Card() {
+  const [isDone, setIsDone] = useState(false)
+
+    function handleCheckbox() {
+        setIsDone(!isDone)
+    }
+
     return (
         <div className={styles.wraperTaskBoard}>
-            <div className={styles.wraperCard}>
-                <checkbox className={styles.checkbox}></checkbox>
-                <span className={styles.content}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
-                <Trash size={20} />
-            </div>
-            <div className={styles.wraperCard}>
-                <checkbox className={styles.checkbox}></checkbox>
-                <span className={styles.content}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
-                <Trash size={20} />
-            </div>
-            <div className={styles.wraperCard}>
-                <checkbox className={styles.checkbox}></checkbox>
-                <span className={styles.content}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
-                <Trash size={20} />
-            </div>
-            <div className={styles.wraperCard}>
-                <checkbox className={styles.checkbox}></checkbox>
-                <span className={styles.content}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
-                <Trash size={20} />
-            </div>
-            <div className={styles.wraperCard} disabled>
+            <button 
+                className={ isDone ? `${styles.wraperCardIsDone}` : `${styles.wraperCard}`}
+                onClick={handleCheckbox}
+            >
                 <checkbox className={styles.checkbox}>
                     {/* { disabled && <img src={checkedBox}/> } */}
                 </checkbox>
-                <span className={styles.content}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
+                <span className={styles.content}> Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
                 <Trash size={20} />
-            </div>
+            </button>
         </div>
     )
 }
