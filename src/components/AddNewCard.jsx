@@ -1,5 +1,5 @@
 import React from 'react'
-import insertIcon from '../../assets/insertIcon.svg'
+import insertIcon from '../assets/insertIcon.svg'
 
 import styles from './AddNewCard.module.css'
 

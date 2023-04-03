@@ -1,5 +1,5 @@
 import React from 'react'
-import clipboard from '../../assets/clipboard.svg'
+import clipboard from '../assets/clipboard.svg'
 
 import styles from './Empty.module.css'
 

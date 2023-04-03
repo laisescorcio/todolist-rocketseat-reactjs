@@ -13,6 +13,8 @@ export default function Card() {
         setIsDone(!isDone)
     }
 
+    
+
     return (
         <div className={styles.wraperTaskBoard}>
             <button 
