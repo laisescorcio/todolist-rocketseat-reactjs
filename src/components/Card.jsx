@@ -8,6 +8,9 @@ import styles from './Card.module.css'
 
 export default function Card() {
   const [isDone, setIsDone] = useState(false)
+  const [ itemToDo, setItemToDo] = useState('Fazer isso!')
+
+  console.log('itemToDo', itemToDo)
 
     function handleCheckbox() {
         setIsDone(!isDone)
@@ -21,10 +24,12 @@ export default function Card() {
                 className={ isDone ? `${styles.wraperCardIsDone}` : `${styles.wraperCard}`}
                 onClick={handleCheckbox}
             >
+                <div className={styles.wraperCardFirstBox}>
                 <checkbox className={styles.checkbox}>
                     {/* { disabled && <img src={checkedBox}/> } */}
                 </checkbox>
-                <span className={styles.content}> Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
+                <span className={styles.content}>{itemToDo}</span>
+                </div>
                 <Trash size={20} />
             </button>
         </div>
