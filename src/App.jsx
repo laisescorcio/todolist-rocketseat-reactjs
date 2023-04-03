@@ -9,6 +9,12 @@ import styles from './App.module.css'
 function App() {
   const [isEmpty, setIsEmpty] = useState(false)
 
+  const [data, setData] = useState('Fazer isso!');
+
+const childToParent = (childdata) => {
+  setData(childdata);
+}
+
   return (
     <div className="App">
       <header className={styles.header}>
@@ -16,7 +22,8 @@ function App() {
       </header>
       <main className={styles.main}>
         <div className={styles.wrapperMain}>
-          <AddNewCard/>
+          {data}
+          <AddNewCard childToParent={childToParent}/>
           <div>
             <div className={styles.wraperTaskInput}>
               <span className={styles.taskInputCreated}>Tarefas criadas</span>
@@ -25,7 +32,7 @@ function App() {
             { isEmpty ? (
               <Empty />
             ) : (
-              <Card/>
+              <Card data={data}/>
             )
             }
           </div>
